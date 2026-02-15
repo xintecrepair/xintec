@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新特电子 Xintec - GTA专业电脑手机维修</title>
+<style>
+:root { --main-blue: #0056b3; --accent-orange: #ff9900; --bg-gray: #f8f9fa; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; background: var(--bg-gray); }
+
+/* 导航栏 */
+nav { background: #fff; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 100; display: flex; justify-content: space-around; }
+nav a { text-decoration: none; color: var(--main-blue); font-weight: bold; font-size: 0.9rem; }
+
+/* 顶部横幅 */
+header { background: linear-gradient(135deg, #0056b3 0%, #002d5e 100%); color: white; padding: 60px 20px; text-align: center; }
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+header p { opacity: 0.9; margin-top: 10px; }
+
+.container { max-width: 1000px; margin: auto; padding: 20px; }
+
+/* 维修板块 */
+.section-title { text-align: center; color: var(--main-blue); margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid #ddd; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.price-list { list-style: none; padding: 0; }
+.price-list li { padding: 10px 0; border-bottom: 1px dashed #eee; display: flex; justify-content: space-between; }
+.price-tag { color: #d9534f; font-weight: bold; }
+
+/* 关于我们 */
+.about-box { background: #fff; padding: 30px; border-radius: 8px; border-left: 5px solid var(--accent-orange); line-height: 1.8; }
+
+/* 联系方式 */
+.contact-box { background: var(--main-blue); color: white; text-align: center; padding: 40px 20px; border-radius: 8px; margin-top: 40px; }
+.contact-item { font-size: 1.2rem; margin: 15px 0; }
+.contact-item a { color: #fff; text-decoration: none; border-bottom: 1px solid #fff; }
+
+footer { text-align: center; padding: 40px; color: #888; font-size: 0.8rem; }
+
+@media (max-width: 600px) {
+header h1 { font-size: 1.8rem; }
+nav { font-size: 0.8rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="#computer">电脑维修</a>
+<a href="#phone">手机维修</a>
+<a href="#about">关于我们</a>
+<a href="#contact">联系我们</a>
+</nav>
+
+<header>
+<h1>新特电子 Xintec</h1>
+<p>专业芯片级维修 · GTA地区上门服务</p>
+</header>
+
+<div class="container">
+
+<h2 id="computer" class="section-title">💻 电脑维修项目</h2>
+<div class="card">
+<ul class="price-list">
+<li><span>一、安装系统</span><span class="price-tag">$50 起</span></li>
+<li><span>二、电脑清灰</span><span class="price-tag">$80 起</span></li>
+<li><span>三、电脑进水修复</span><span class="price-tag">$150 起</span></li>
+<li><span>四、主板芯片级维修</span><span class="price-tag">需具体检测</span></li>
+<li><span>五、更换配件 (屏幕/电池/键盘)</span><span class="price-tag">按型号报价</span></li>
+<li><span>六、定制装机服务</span><span class="price-tag">按配置报价</span></li>
+<li><span>七、二手机买卖/出租</span><span class="price-tag">欢迎咨询</span></li>
+</ul>
+</div>
+
+<h2 id="phone" class="section-title">📱 手机维修项目</h2>
+<div class="card">
+<ul class="price-list">
+<li><span>一、高清手机贴膜</span><span class="price-tag">$10</span></li>
+<li><span>二、手机换屏服务</span><span class="price-tag">按型号报价</span></li>
+<li><span>三、手机进水处理</span><span class="price-tag">$100 起</span></li>
+<li><span>四、主板精修</span><span class="price-tag">按型号报价</span></li>
+<li><span>五、更换配件 (尾插/摄像头等)</span><span class="price-tag">按型号报价</span></li>
+<li><span>六、二手机买卖</span><span class="price-tag">正品保障</span></li>
+</ul>
+</div>
+
+<h2 id="about" class="section-title">📢 关于我们</h2>
+<div class="about-box">
+<p><strong>国内20年老店勇闯加拿大！</strong></p>
+<p>我们拥有深厚的维修技术沉淀，专业提供电脑、手机、Pad的<strong>芯片级维修</strong>。无论是疑难杂症的进水处理、清灰保养，还是日常的更换屏幕、系统安装、数据恢复及个性化装机，我们都能高效搞定。</p>
+<p><strong>特色服务：</strong>提供GTA地区上门服务，另有高品质二手电脑手机买卖与出租业务。技术过硬，价格透明，诚信经营！</p>
+</div>
+
+<h2 id="contact" class="section-title">📞 联系我们</h2>
+<div class="contact-box">
+<div class="contact-item">💬 微信客服：<strong>Canadaxt</strong></div>
+<div class="contact-item">📞 电话咨询：<a href="tel:4373620026">437-362-0026</a></div>
+<p style="margin-top:20px; font-size: 0.9rem;">📍 服务范围：Greater Toronto Area (GTA)</p>
+</div>
+
+</div>
+
+<footer>
+&copy; 2026 新特电子 Xintec - Professional Repair Services.
+</footer>
+
+</body>
+</html>
