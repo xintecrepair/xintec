@@ -5,13 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>新特电子XINTEC - GTA专业电脑手机维修</title>
 <style>
-/* 1. IT行业高级色配方案 */
+/* 1. 高级配色方案 */
 :root {
---main-navy: #0a2540; /* 商务深藏青：用于文字和标题 */
---accent-blue: #0071e3; /* 苹果蓝：用于重点强调 */
---bg-light: #f5f5f7; /* 极浅灰：页面背景，比纯白高级 */
---card-white: #ffffff; /* 纯白：卡片背景 */
---price-red: #d9534f; /* 柔和红：价格标注 */
+--main-navy: #0a2540;
+--accent-blue: #0071e3;
+--bg-light: #f5f5f7;
+--card-white: #ffffff;
+--tag-bg: #f0f4f8; /* 科技蓝灰背景 */
+--tag-text: #004a99; /* 深科技蓝文字 */
 }
 
 body {
@@ -19,28 +20,39 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 line-height: 1.6;
 color: var(--main-navy);
 margin: 0;
-background-color: #f5f5f7 !important;
+background-color: var(--bg-light) !important;
 }
 
-/* 导航栏 */
+/* 导航栏毛玻璃效果 */
 nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
-    backdrop-filter: blur(10px);         /* 关键：毛玻璃模糊 */
-    -webkit-backdrop-filter: blur(10px); /* 兼容苹果手机 */
-    box-shadow: 0 1px 10px rgba(0,0,0,0.05);
-    z-index: 1000;
-nav a { text-decoration: none; color: var(--main-navy); font-weight: 500; font-size: 0.9rem; }
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+z-index: 1000;
+display: flex;
+justify-content: center;
+gap: 20px;
+padding: 15px 0;
+}
 
-/* 2. 背景大图（已修复文件名） */
+nav a {
+text-decoration: none;
+color: var(--main-navy);
+font-weight: 500;
+font-size: 0.9rem;
+}
+
+/* 背景大图 */
 header {
-background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)),url('cover.jpg');
+background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('cover.jpg');
 background-size: cover;
 background-position: center;
 color: white;
-padding: 100px 20px;
+padding: 120px 20px 80px;
 text-align: center;
 }
 
@@ -58,14 +70,20 @@ font-size: 1.5rem;
 
 /* 卡片设计 */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加平滑过渡 */
-    cursor: pointer;
+background: var(--card-white);
+border-radius: 16px;
+padding: 10px 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+cursor: pointer;
+margin-bottom: 20px;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* 鼠标移上去轻轻浮起 */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 阴影加深 */
+transform: translateY(-5px);
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
+
 .price-list { list-style: none; padding: 0; margin: 0; }
 .price-list li {
 padding: 15px 0;
@@ -75,94 +93,115 @@ justify-content: space-between;
 align-items: center;
 }
 .price-list li:last-child { border-bottom: none; }
+
+/* 高级感价格标签 */
 .price-tag {
-    background: #f0f4f8;      /* 极浅的蓝灰色背景 */
-    color: #004a99;           /* 深科技蓝 */
-    padding: 4px 12px;
-    border-radius: 6px;       /* 方中带圆的硬朗感 */
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: 1px solid #d1d9e6;
+background: var(--tag-bg);
+color: var(--tag-text);
+padding: 4px 12px;
+border-radius: 6px;
+font-size: 0.9rem;
+font-weight: 600;
+border: 1px solid #d1d9e6;
+white-space: nowrap;
 }
+
 /* 优势板块 */
 .about-box {
 background: var(--main-navy);
 color: white;
 padding: 30px;
-border-radius: 16px;
+border-radius: 20px;
+margin: 40px 0;
 }
-.about-box p { margin: 10px 0; font-size: 1rem; opacity: 0.9; }
-.about-box strong { color: var(--accent-blue); }
+.about-box p {
+margin: 15px 0;
+font-size: 1.05rem;
+display: flex;
+align-items: center;
+gap: 10px;
+}
 
-/* 联系方式 */
+/* 联系方式区块 */
 .contact-box {
 background: var(--accent-blue);
 color: white;
 text-align: center;
 padding: 40px 20px;
-border-radius: 20px;
-margin-top: 40px;
+border-radius: 24px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
 }
-.contact-item { font-size: 1.4rem; margin: 15px 0; font-weight: bold; }
-.contact-item a { color: #fff; text-decoration: none; border-bottom: 2px solid rgba(255,255,255,0.5); }
+.contact-item { font-size: 1.3rem; font-weight: bold; }
+.contact-item a {
+color: #fff;
+text-decoration: none;
+border-bottom: 2px solid rgba(255,255,255,0.6);
+}
 
-footer { text-align: center; padding: 50px; color: #aaa; font-size: 0.8rem; }
+footer { text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.8rem; }
 </style>
 </head>
 <body>
 
 <nav>
 <a href="#computer">电脑维修</a>
-<a href="#phone">手机Pad维修</a>
-<a href="#about">优势</a>
-<a href="#contact">联系</a>
+<a href="#phone">手机维修</a>
+<a href="#about">我们的优势</a>
+<a href="#contact">联系我们</a>
 </nav>
 
 <header>
 <h1>新特电子 Xintec</h1>
-<p>国内20年老店技术沉淀 · GTA地区上门服务</p>
+<p>国内20年老店技术沉淀 · GTA地区专业上门服务</p>
 </header>
 
 <div class="container">
 <h2 id="computer" class="section-title">💻 电脑维修项目</h2>
 <div class="card">
 <ul class="price-list">
-<li><span>系统安装/重装 (Win/Mac)</span><span class="price-tag">$50 起</span></li>
-<li><span>电脑清灰保养</span><span class="price-tag">$100 起</span></li>
-<li><span>意外进水紧急修复</span><span class="price-tag">$150 起</span></li>
-<li><span>主板芯片维修</span><span class="price-tag">检测后报价</span></li>
-<li><span>换屏/电池/键盘更换</span><span class="price-tag">按型号报价</span></li>
-<li><span>二手机买卖/出租</span><span class="price-tag">可免费试用</span></li>
+<li><span>💿 系统安装/重装 (Win/Mac)</span><span class="price-tag">$60 起</span></li>
+<li><span>🧹 电脑深度清灰保养</span><span class="price-tag">$100 起</span></li>
+<li><span>💧 意外进水紧急修复</span><span class="price-tag">$150 起</span></li>
+<li><span>🧠 主板芯片级维修</span><span class="price-tag">检测后报价</span></li>
+<li><span>🖥️ 换屏/电池/键盘更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>♻️ 二手机买卖/出租</span><span class="price-tag">可免费试用</span></li>
 </ul>
 </div>
 
 <h2 id="phone" class="section-title">📱 手机 Pad 维修</h2>
 <div class="card">
 <ul class="price-list">
-<li><span>高清手机/Pad贴膜</span><span class="price-tag">$10 起</span></li>
-<li><span>原装级别屏幕更换</span><span class="price-tag">按型号报价</span></li>
-<li><span>各类配件更换</span><span class="price-tag">按型号报价</span></li>
-<li><span>手机进水/不开机修复</span><span class="price-tag">$100 起</span></li>
+<li><span>✨ 高清手机/Pad贴膜</span><span class="price-tag">$10 起</span></li>
+<li><span>📱 原装级别屏幕更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>🔧 各类核心配件更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>🔋 意外进水紧急修复</span><span class="price-tag">$100 起</span></li>
 </ul>
 </div>
 
 <div id="about" class="about-box">
-<p>✅ <strong>业内资深经验：</strong> 国内20年老店技术沉淀</p>
-<p>✅ <strong>GTA上门服务：</strong> 覆盖大多伦多地区</p>
-<p>✅ <strong>透明诚信理念：</strong> 提供面对面维修服务</p>
+<p>✅ <strong>资深经验：</strong> 国内20年老店技术沉淀</p>
+<p>✅ <strong>方便快捷：</strong> 大多伦多(GTA)地区上门服务</p>
+<p>✅ <strong>诚信第一：</strong> 面对面维修，价格公开透明</p>
 </div>
 
 <div id="contact" class="contact-box">
-<div class="contact-item" style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
-    <div>💬 微信: <strong>Canadaxt</strong></div>
-    <img src="wechat-qr.png.JPG" alt="WeChat QR Code" style="width: 160px; height: 160px; border: 4px solid white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-top: 5px;">
-    <p style="font-size: 0.85rem; color: #666; margin: 0;">↑ 长按识别二维码加我微信</p>
-</div>
+<div class="contact-item">💬 微信: Canadaxt</div>
+<img src="wechat-qr.png.JPG" alt="微信二维码" style="width: 180px; height: 180px; border: 5px solid white; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
+<p style="font-size: 0.9rem; color: rgba(255,255,255,0.9); margin: 0;">↑ 长按识别二维码加我微信</p>
+<div style="width: 60px; height: 2px; background: rgba(255,255,255,0.3); margin: 10px 0;"></div>
 <div class="contact-item">📞 电话：<a href="tel:4373620026">437-362-0026</a></div>
-<p>📍 GTA 地区可上门的专业电脑手机维修服务</p>
+<p style="font-size: 0.9rem; opacity: 0.9;">📍 您的多伦多电脑手机家庭医生</p>
 </div>
 </div>
 
 <footer>&copy; 2026 Xintec Repair Services</footer>
+
+<a href="tel:4373620026" style="position:fixed; bottom:30px; right:20px; background:var(--accent-blue); color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 15px rgba(0,0,0,0.3); z-index:1100; font-size:24px;">
+📞
+</a>
+
 </body>
 </html>
