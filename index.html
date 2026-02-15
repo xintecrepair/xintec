@@ -3,116 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>新特电子在多伦多Xintec - GTA专业电脑手机维修</title>
+<title>新特电子XINTEC - GTA专业电脑手机维修</title>
 <style>
-  <style>
-        :root { 
-            --main-navy: #0a2540;      /* 商务深藏青 */
-            --accent-blue: #0071e3;    /* 苹果蓝 */
-            --bg-light: #f5f5f7;       /* 极浅灰背景 */
-            --card-white: #ffffff;     /* 纯白卡片 */
-        }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            line-height: 1.6; 
-            color: var(--main-navy); 
-            margin: 0; 
-            background-color: var(--bg-light); 
-        }
-        
-        nav { 
-            background: rgba(255,255,255,0.8); 
-            backdrop-filter: blur(10px); 
-            padding: 1rem; 
-            position: sticky; 
-            top: 0; 
-            box-shadow: 0 1px 5px rgba(0,0,0,0.05); 
-            z-index: 100; 
-            display: flex; 
-            justify-content: space-around; 
-        }
+/* 1. IT行业高级色配方案 */
+:root {
+--main-navy: #0a2540; /* 商务深藏青：用于文字和标题 */
+--accent-blue: #0071e3; /* 苹果蓝：用于重点强调 */
+--bg-light: #f5f5f7; /* 极浅灰：页面背景，比纯白高级 */
+--card-white: #ffffff; /* 纯白：卡片背景 */
+--price-red: #d9534f; /* 柔和红：价格标注 */
+}
 
-        header { 
-            /* 这里的图片名已经按你截图里的 cover.jpg.PNG 改好了 */
-            background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('cover.jpg.PNG'); 
-            background-size: cover; 
-            background-position: center;
-            color: white; 
-            padding: 100px 20px; 
-            text-align: center; 
-        }
+body {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+line-height: 1.6;
+color: var(--main-navy);
+margin: 0;
+background-color: var(--bg-light);
+}
 
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        header p { font-size: 1.1rem; opacity: 0.9; margin-top: 15px; }
+/* 导航栏 */
+nav {
+background: rgba(255,255,255,0.8);
+backdrop-filter: blur(10px); /* 毛玻璃效果 */
+padding: 1rem;
+position: sticky;
+top: 0;
+box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+z-index: 100;
+display: flex;
+justify-content: space-around;
+}
+nav a { text-decoration: none; color: var(--main-navy); font-weight: 500; font-size: 0.9rem; }
 
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        
-        /* 这里的卡片背景也记得改成变量 */
-        .card { 
-            background: var(--card-white); 
-            padding: 25px; 
-            border-radius: 16px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03); 
-            margin-bottom: 30px; 
-        }
+/* 2. 背景大图（已修复文件名） */
+header {
+background: linear-gradient(rgba(10,37,64,0.6), rgba(10,37,64,0.6)), url('cover.jpg.PNG');
+background-size: cover;
+background-position: center;
+color: white;
+padding: 100px 20px;
+text-align: center;
+}
+
+header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+header p { font-size: 1.1rem; opacity: 0.9; margin-top: 15px; }
+
+.container { max-width: 800px; margin: auto; padding: 20px; }
+
+.section-title {
+text-align: center;
+color: var(--main-navy);
+margin: 40px 0 20px;
+font-size: 1.5rem;
+}
+
+/* 卡片设计 */
+.card {
+background: var(--card-white);
+padding: 25px;
+border-radius: 16px;
+box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+margin-bottom: 30px;
+}
+
+.price-list { list-style: none; padding: 0; margin: 0; }
+.price-list li {
+padding: 15px 0;
+border-bottom: 1px solid #f0f0f0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.price-list li:last-child { border-bottom: none; }
+.price-tag { color: var(--price-red); font-weight: 600; font-size: 1.1rem; }
+
+/* 优势板块 */
+.about-box {
+background: var(--main-navy);
+color: white;
+padding: 30px;
+border-radius: 16px;
+}
+.about-box p { margin: 10px 0; font-size: 1rem; opacity: 0.9; }
+.about-box strong { color: var(--accent-blue); }
+
+/* 联系方式 */
+.contact-box {
+background: var(--accent-blue);
+color: white;
+text-align: center;
+padding: 40px 20px;
+border-radius: 20px;
+margin-top: 40px;
+}
+.contact-item { font-size: 1.4rem; margin: 15px 0; font-weight: bold; }
+.contact-item a { color: #fff; text-decoration: none; border-bottom: 2px solid rgba(255,255,255,0.5); }
+
+footer { text-align: center; padding: 50px; color: #aaa; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<nav>
 <a href="#computer">电脑维修</a>
 <a href="#phone">手机维修</a>
-<a href="#about">关于我们</a>
-<a href="#contact">联系我们</a>
+<a href="#about">优势</a>
+<a href="#contact">联系</a>
 </nav>
 
 <header>
 <h1>新特电子 Xintec</h1>
-<p>专业芯片级维修 · GTA地区上门服务</p>
+<p>国内20年老店专业技术 · GTA地区专业上门服务</p>
 </header>
 
 <div class="container">
-
 <h2 id="computer" class="section-title">💻 电脑维修项目</h2>
 <div class="card">
 <ul class="price-list">
-<li><span>一、安装系统</span><span class="price-tag">$50 起</span></li>
-<li><span>二、电脑清灰</span><span class="price-tag">$80 起</span></li>
-<li><span>三、电脑进水修复</span><span class="price-tag">$150 起</span></li>
-<li><span>四、主板芯片级维修</span><span class="price-tag">需具体检测</span></li>
-<li><span>五、更换配件 (屏幕/电池/键盘)</span><span class="price-tag">按型号报价</span></li>
-<li><span>六、定制装机服务</span><span class="price-tag">按配置报价</span></li>
-<li><span>七、二手机买卖/出租</span><span class="price-tag">免费试用安心质保</span></li>
+<li><span>系统安装/重装 (Win/Mac)</span><span class="price-tag">$50 起</span></li>
+<li><span>电脑深度清灰保养</span><span class="price-tag">$100 起</span></li>
+<li><span>意外进水紧急修复</span><span class="price-tag">$150 起</span></li>
+<li><span>主板级芯片维修</span><span class="price-tag">检测后报价</span></li>
+<li><span>换屏/电池/键盘更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>二手手机买卖/出租</span><span class="price-tag">可免费试用</span></li>
 </ul>
 </div>
 
-<h2 id="phone" class="section-title">📱 手机Pad维修项目</h2>
+<h2 id="phone" class="section-title">📱 手机 Pad 维修</h2>
 <div class="card">
 <ul class="price-list">
-<li><span>一、高清手机Pad贴膜</span><span class="price-tag">$10起</span></li>
-<li><span>二、手机Pad换屏服务</span><span class="price-tag">按型号报价</span></li>
-<li><span>三、手机Pad进水处理</span><span class="price-tag">$100 起</span></li>
-<li><span>四、主板精修</span><span class="price-tag">按型号报价</span></li>
-<li><span>五、更换配件 (尾插/摄像头等)</span><span class="price-tag">按型号报价</span></li>
-<li><span>六、二手机买卖</span><span class="price-tag">免费试用安心质保</span></li>
+<li><span>高清手机/Pad贴膜</span><span class="price-tag">$10 起</span></li>
+<li><span>原装级别屏幕更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>各类配件更换</span><span class="price-tag">按型号报价 起</span></li>
+<li><span>手机进水/不开机修复</span><span class="price-tag">$100 起</span></li>
 </ul>
 </div>
 
-<h2 id="about" class="section-title">📢 关于我们</h2>
-<div class="about-box">
-<p><strong>国内20年老店勇闯加拿大！</strong></p>
-<p>我们拥有深厚的维修技术沉淀，提供电脑、手机Pad的<strong>芯片级维修</strong>。无论是进水处理、清灰保养，还是日常的更换屏幕、系统安装、数据恢复及个性化装机，我们都能提供高效解决方案。</p>
-<p><strong>特色服务：</strong>提供GTA地区上门服务，另有二手电脑手机买卖与出租业务。</p>
+<div id="about" class="about-box">
+<p>✅ <strong>20年资深经验：</strong> 始于国内专业技术，精修疑难杂症</p>
+<p>✅ <strong>GTA上门服务：</strong> 覆盖大多伦多地区</p>
+<p>✅ <strong>透明诚信：</strong> 。</p>
 </div>
 
-<h2 id="contact" class="section-title">📞 联系我们</h2>
-<div class="contact-box">
-<div class="contact-item">💬 微信客服：<strong>Canadaxt</strong></div>
-<div class="contact-item">📞 电话咨询：<a href="tel:4373620026">437-362-0026</a></div>
-<p style="margin-top:20px; font-size: 0.9rem;">📍 服务范围：Greater Toronto Area (GTA)</p>
+<div id="contact" class="contact-box">
+<div class="contact-item">💬 微信：Canadaxt</div>
+<div class="contact-item">📞 电话：<a href="tel:4373620026">437-362-0026</a></div>
+<p>📍 GTA 地区专业电子维修服务</p>
+</div>
 </div>
 
-</div>
-
-<footer>
-&copy; 2026 新特电子 Xintec - Professional Repair Services.
-</footer>
-
+<footer>&copy; 2026 Xintec Repair Services</footer>
 </body>
 </html>
