@@ -24,16 +24,14 @@ background-color: #f5f5f7 !important;
 
 /* 导航栏 */
 nav {
-background: rgba(255,255,255,0.8);
-backdrop-filter: blur(10px); /* 毛玻璃效果 */
-padding: 1rem;
-position: sticky;
-top: 0;
-box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-z-index: 100;
-display: flex;
-justify-content: space-around;
-}
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+    backdrop-filter: blur(10px);         /* 关键：毛玻璃模糊 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容苹果手机 */
+    box-shadow: 0 1px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
 nav a { text-decoration: none; color: var(--main-navy); font-weight: 500; font-size: 0.9rem; }
 
 /* 2. 背景大图（已修复文件名） */
@@ -129,12 +127,12 @@ footer { text-align: center; padding: 50px; color: #aaa; font-size: 0.8rem; }
 <h2 id="computer" class="section-title">💻 电脑维修项目</h2>
 <div class="card">
 <ul class="price-list">
-<li><span>系统安装/重装 (Win/Mac)</span><span class="price-tag">$50 起</span></li>
-<li><span>电脑深度清灰保养</span><span class="price-tag">$100 起</span></li>
-<li><span>意外进水紧急修复</span><span class="price-tag">$150 起</span></li>
-<li><span>主板级芯片维修</span><span class="price-tag">检测后报价</span></li>
-<li><span>换屏/电池/键盘更换</span><span class="price-tag">按型号报价</span></li>
-<li><span>二手机买卖/出租</span><span class="price-tag">可免费试用</span></li>
+<li><span>💿系统安装/重装 (Win/Mac)</span><span class="price-tag">$50 起</span></li>
+<li><span>🍳电脑清灰保养</span><span class="price-tag">$100 起</span></li>
+<li><span>💧意外进水紧急修复</span><span class="price-tag">$150 起</span></li>
+<li><span>🧠主板芯片维修</span><span class="price-tag">检测后报价</span></li>
+<li><span>🍎换屏/电池/键盘更换</span><span class="price-tag">按型号报价</span></li>
+<li><span>💻二手机买卖/出租</span><span class="price-tag">可免费试用</span></li>
 </ul>
 </div>
 
