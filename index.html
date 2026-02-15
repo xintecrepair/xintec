@@ -60,13 +60,14 @@ font-size: 1.5rem;
 
 /* 卡片设计 */
 .card {
-background: var(--card-white);
-padding: 25px;
-border-radius: 16px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加平滑过渡 */
+    cursor: pointer;
 }
 
+.card:hover {
+    transform: translateY(-5px); /* 鼠标移上去轻轻浮起 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 阴影加深 */
+}
 .price-list { list-style: none; padding: 0; margin: 0; }
 .price-list li {
 padding: 15px 0;
@@ -76,7 +77,14 @@ justify-content: space-between;
 align-items: center;
 }
 .price-list li:last-child { border-bottom: none; }
-.price-tag { color: var(--price-red); font-weight: 600; font-size: 1.1rem; }
+.price-tag {
+    background: #fff5f5; /* 极浅粉色背景 */
+    color: #d9534f;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #ffebeb;
+}
 
 /* 优势板块 */
 .about-box {
