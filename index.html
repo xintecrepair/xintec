@@ -15,47 +15,53 @@ body {
 margin: 0;
 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 background: #f5f6fa;
+overflow-x: hidden;
 }
 
-/* 1. 修复背景图：使用正确的文件名 cover.jpg */
+/* 1. 顶部背景区：解决灰色和偏移 */
 .hero {
-min-height: 420px;
+min-height: 450px;
 height: 55vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;
-text-align: center;
+align-items: center; /* 垂直居中 */
+text-align: center; /* 文字水平居中 */
 position: relative;
 color: white;
-/* 关键点：这里必须叫 cover.jpg */
+/* 背景图：确保文件名是 cover.jpg */
 background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cover.jpg') no-repeat center center;
 background-size: cover;
 padding-top: 50px;
 }
 
-/* 2. 彻底解决文字重叠 */
+/* 2. 标题容器：解决不居中和缺字 */
 .hero h1 {
-margin: 0;
-padding: 0 20px;
-min-height: 110px; /* 给打字机预留足够空间 */
+margin: 0 auto;
+padding: 0;
+width: 100%; /* 撑满屏幕宽度 */
+max-width: 600px; /* 限制宽度防止在大屏太散 */
+min-height: 120px; /* 预留打字机跳动的空间 */
 display: flex;
+justify-content: center; /* 容器内内容居中 */
 align-items: center;
-justify-content: center;
 }
 
 #typed {
-white-space: pre-wrap !important;
+white-space: pre-wrap !important; /* 识别打字机换行符 \n */
+display: inline-block;
 font-size: 2.2rem;
 font-weight: bold;
-line-height: 1.3;
-text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+line-height: 1.4;
+text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+width: 100%; /* 强制文本占满可用宽度实现居中 */
 }
 
 .hero p {
 font-size: 1.1rem;
-opacity: 0.95;
-margin-top: 40px !important; /* 拉开标题与小字的距离 */
+opacity: 0.9;
+margin-top: 40px !important; /* 强制拉开与标题的距离，防止重叠 */
+font-weight: 500;
 }
 
 /* 导航栏 */
@@ -79,10 +85,10 @@ font-weight: bold;
 font-size: 0.9rem;
 }
 
-/* 项目容器 */
+/* 项目卡片 */
 .container {
 max-width: 800px;
-margin: -30px auto 40px;
+margin: -40px auto 40px;
 padding: 0 20px;
 position: relative;
 z-index: 10;
@@ -115,74 +121,28 @@ border-bottom: 1px solid #eee;
 }
 
 .price-tag {
+background: #f0f7ff;
 color: var(--accent-blue);
+padding: 4px 12px;
+border-radius: 20px;
 font-weight: bold;
+font-size: 0.9rem;
 }
 
-/* 移动端调整 */
+/* 移动端适配 */
 @media (max-width: 600px) {
 #typed { font-size: 1.8rem; }
-.hero { height: 50vh; }
-nav { gap: 10px; }
-nav a { font-size: 0.8rem; }
-}
-
-/* 浮动拨号按钮 */
-.call-btn {
-position: fixed;
-bottom: 30px;
-right: 20px;
-width: 60px;
-height: 60px;
-background: var(--accent-blue);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-z-index: 1100;
-text-decoration: none;
-}
-</style>
-</head>
-<body>
-
-<nav>
-<a href="#computer">电脑维修</a>
-<a href="#phone">手机维修</a>
-<a href="#about">核心优势</a>
-<a href="#contact">联系我们</a>
-</nav>
-
-<header class="hero">
-<h1><span id="typed"></span></h1>
-<p>国内20年老店技术沉淀 · GTA地区上门服务</p>
-</header>
-
-<div class="container">
-<h2 id="computer" class="section-title">💻 电脑维修项目</h2>
-<div class="card">
-<ul class="price-list">
-<li><span>💿 系统安装 (Win/Mac)</span><span class="price-tag">$60 起</span></li>
-<li><span>🧹 电脑清灰保养</span><span class="price-tag">$100 起</span></li>
-<li><span>💧 进水紧急修复</span><span class="price-tag">$100 起</span></li>
-<li><span>🍱 主板芯片维修</span><span class="price-tag">检测后报价</span></li>
-<li><span>🖥️ 换屏/电池/键盘更换</span><span class="price-tag">型号报价</span></li>
-<li><span>♻️ 二手机买卖/出租</span><span class="price-tag">免费试用</span></li>
-</ul>
-</div>
-</div>
-
-<a href="tel:4373620826" class="call-btn">
-<span style="font-size: 24px;">📞</span>
-</a>
-
-<script>
+.hero { height: 50vh; min-height: 400px; }
+</li>
+/li>
+/li>
+// 关键：初始化打字机
 var typed = new Typed('#typed', {
-// 修正后的打字内容
+// \n 会配合 CSS 的 pre-wrap 实现换行
 strings: ['多伦多新特电子\nXinTec Repair'],
-typeSpeed: 60,
-backSpeed: 30,
+typeSpeed: 70,
+backSpeed: 40,
+startDelay: 300, // 稍微延迟，确保居中布局已计算完成
 loop: true,
 backDelay: 2500,
 showCursor: true,
