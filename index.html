@@ -61,17 +61,21 @@ nav {
 /* 大约从第 59 行开始替换 */
 .hero {
     min-height: 400px !important; 
-    height: 50vh !important; /* 核心：不占全屏，只占一半 */
+    height: 50vh !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
     padding-top: 60px !important;
-    position: relative;
-    /* 补回背景图，确保不显灰色 */
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://xintecrepair.github.io/background.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background.jpg') no-repeat center center;
     background-size: cover !important;
+}
+#typed {
+    white-space: pre-wrap !important;
+    display: inline-block !important;
+    font-size: 2.2rem;
+    font-weight: bold;
     color: white;
 }
 
