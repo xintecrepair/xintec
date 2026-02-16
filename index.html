@@ -109,19 +109,22 @@ nav a { text-decoration: none; color: var(--main-blue); font-weight: bold; font-
 </a>
 
 <script>
-window.onload = function() {
-new Typed('#typed', {
-strings: ['多伦多新特电子\nXinTec Repair'],
-typeSpeed: 200, /* 非常缓慢的打字速度 */
-backSpeed: 200,
-startDelay: 1000,
-loop: true,
-backDelay: 4000, /* 停顿4.5秒 */
-showCursor: true,
-cursorChar: '|',
-onBegin: (self) => { document.getElementById('typed').innerHTML = ''; }
-});
-};
+    window.onload = function() {
+        // 第一步：先手动清空一次，确保不会出现“先删再打”的情况
+        document.getElementById('typed').innerHTML = '';
+
+        new Typed('#typed', {
+            // 这里是你要打出来的字
+            strings: ['多伦多新特电子\nXinTec Repair'],
+            typeSpeed: 180,   /* 打字速度：数值越大越慢 */
+            backSpeed: 80,    /* 删字速度 */
+            startDelay: 1000, /* 核心：进网页后等 1 秒再开始打字，防止错觉 */
+            loop: true,       /* 循环开关 */
+            backDelay: 4500,  /* 打完名字停顿 4.5 秒，让客人看清楚 */
+            showCursor: true,
+            cursorChar: '|'
+        });
+    };
 </script>
 </body>
 </html>
