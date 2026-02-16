@@ -55,26 +55,25 @@ nav {
     z-index: 1000;
 }
 
-/* 2. 标题打字机效果修复 (解决手机版缺字) */
+/* 2. 标题打字机效果修复（解决手机溢出截断） */
 .hero h1 {
     font-size: 2.8rem;
     line-height: 1.3;
     margin-bottom: 20px;
-    word-break: break-word; /* 允许在长单词处换行 */
-    overflow-wrap: break-word;
-    white-space: normal !important; /* 强制允许换行，覆盖打字机默认设置 */
-}
-.hero h1 {
-    font-size: 2.8rem;
-    line-height: 1.3;
-    word-break: break-word; /* 允许换行 */
-    white-space: normal !important; /* 强制换行 */
+    /* 核心修复：强制换行三部曲 */
+    white-space: normal !important; 
+    word-break: break-all !important;
+    overflow-wrap: anywhere !important;
+    display: block !important;
 }
 
-/* 专门针对手机的缩放 */
+/* 专门针对手机的缩放和间距调整 */
 @media (max-width: 600px) {
     .hero h1 {
-        font-size: 1.8rem !important; /* 手机上变小一点 */
+        font-size: 1.6rem !important; /* 进一步缩小字号，确保 Xin... 能排下 */
+        line-height: 1.4;
+        padding: 0 10px;
+        text-align: center;
     }
 }
 /* 3. 资深经验板块：淡雅磨砂风格 */
