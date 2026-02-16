@@ -56,19 +56,6 @@ nav {
 }
 
 /* 2. 标题打字机效果修复（解决截断+偏左问题） */
-.hero h1 {
-    font-size: 2.5rem; /* 稍微降一点初始字号，更稳妥 */
-    line-height: 1.3;
-    margin: 0 auto 20px auto; /* 关键：水平居中 */
-    text-align: center; /* 关键：文字内部对齐居中 */
-    max-width: 95%; /* 防止贴边 */
-    
-    /* 强制换行组合拳 */
-    white-space: normal !important; 
-    word-break: break-word !important;
-    display: block !important;
-}
-
 /* 专门针对手机的缩放和间距调整 */
 @media (max-width: 600px) {
     .hero h1 {
@@ -86,6 +73,7 @@ nav {
         justify-content: space-around !important; /* 手机端导航平分空间 */
         padding: 10px 5px !important;
     }
+}
 }
 }
 }
