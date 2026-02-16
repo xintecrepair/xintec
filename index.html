@@ -69,13 +69,24 @@ nav {
     display: block !important;
 }
 
-/* 专门针对手机的缩放（彻底解决 Xin... 缺失） */
+/* 专门针对手机的缩放和间距调整 */
 @media (max-width: 600px) {
     .hero h1 {
-        font-size: 1.6rem !important; /* 手机端必须更小才能不被切断 */
-        padding: 0 10px;
-        line-height: 1.4;
+        font-size: 1.6rem !important; /* 确保字号足够小 */
+        width: 100% !important;      /* 强制容器宽度等于屏幕宽度 */
+        max-width: 100vw !important; /* 防止超出视口 */
+        margin: 0 auto 15px auto !important; /* 强制上下左右居中 */
+        text-align: center !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
     }
+    
+    /* 顺便修复导航栏在手机上可能偏左的问题 */
+    nav {
+        justify-content: space-around !important; /* 手机端导航平分空间 */
+        padding: 10px 5px !important;
+    }
+}
 }
 }
 /* 3. 资深经验板块：淡雅磨砂风格 */
