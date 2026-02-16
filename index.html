@@ -56,32 +56,49 @@ nav {
 }
 
 /* 2. 标题打字机效果修复 - 基础设置 */
+/* 1. 基础居中设置 */
 .hero h1 {
     font-size: 2.5rem;
-    line-height: 1.3;
-    margin: 0 auto 20px auto;
-    text-align: center;
+    line-height: 1.2;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100% !important;
     display: block !important;
 }
 
-/* 强制让打字机生成的 span 能够换行 */
-.hero h1 span {
-    white-space: normal !important;
-    display: inline !important;
-    word-break: break-word !important;
-}
-
-/* 手机端专用样式：必须放在普通样式下面，确保生效 */
+/* 2. 手机端专项调优：增加顶部间距，彻底解决视觉偏移 */
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 1.5rem !important; /* 字号再小一点，给换行留空间 */
-        width: 100% !important;
-        max-width: 100vw !important;
-        margin: 0 auto 15px auto !important;
-        padding: 0 15px !important;
-        display: block !important;
+    /* 增加 header 的顶部距离，躲开固定的导航栏 */
+    header {
+        padding-top: 120px !important; 
+        padding-bottom: 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
     }
 
+    .hero h1 {
+        font-size: 1.8rem !important; /* 既然已经分行，字可以稍微大一点点回来 */
+        padding: 0 10px !important;
+    }
+
+    /* 确保 h1 内部的两个 span 也是强制居中且占据全宽 */
+    .hero h1 span {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin: 5px 0 !important;
+    }
+
+    /* 修复导航栏手机端文字挤在一起的问题 */
+    nav {
+        gap: 12px !important;
+        padding: 15px 5px !important;
+    }
+    nav a {
+        font-size: 0.85rem !important;
+    }
+}
     .hero h1 span {
         font-size: 1.5rem !important;
         line-height: 1.4 !important;
@@ -182,13 +199,19 @@ margin-bottom: 20px;
     box-shadow: 0 15px 35px rgba(0, 113, 227, 0.2); 
     border: 1px solid rgba(0, 113, 227, 0.3);
 }
-.price-list { list-style: none; padding: 0; margin: 0; }
 .price-list li {
-padding: 15px 0;
-border-bottom: 1px solid #f0f0f0;
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* 关键：确保文字颜色是深色，否则在浅色卡片里看不见 */
+    color: #333 !important; 
+}
+
+.price-list li span:first-child {
+    font-weight: 500;
+    color: var(--main-navy); /* 使用你定义的深蓝色 */
 }
 .price-list li:last-child { border-bottom: none; }
 
