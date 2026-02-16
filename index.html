@@ -59,7 +59,28 @@ color: white;
 padding: 120px 20px 80px;
 text-align: center;
 }
+/* 打字机光标闪烁动画 */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
 
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-blue); }
+}
+
+.typing-effect {
+    display: inline-block;
+    overflow: hidden; /* 保证文字在动画前隐藏 */
+    border-right: 3px solid var(--accent-blue); /* 模拟光标 */
+    white-space: nowrap; /* 保证文字不换行 */
+    margin: 0 auto;
+    letter-spacing: 2px;
+    animation: 
+        typing 3.5s steps(30, end),
+        blink .75s step-end infinite;
+}
 header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
 header p { font-size: 1.1rem; opacity: 0.9; margin-top: 15px; }
 
