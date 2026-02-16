@@ -43,24 +43,23 @@ body {
 
 /* 导航栏毛玻璃效果 */
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    /* 增加不透明度，让它更“实”一点 */
-    background: rgba(255, 255, 255, 0.9) !important; 
-    /* 增加饱和度，让透过去的背景色更好看 */
-    backdrop-filter: blur(20px) saturate(180%); 
+    width: 100%;
+    /* 核心修改：增加不透明度到 0.9，并利用 saturate 提亮透过的背景色 */
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    padding: 18px 0; /* 稍微加宽一点，更显大气 */
+    /* 增加一个非常淡的底边线，让它与下方内容有物理分割感 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* 优化投影，让悬浮感更自然 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    z-index: 1000;
     display: flex;
     justify-content: center;
-    gap: 25px; /* 间距拉开一点 */
-    z-index: 1000;
-    /* 关键：加一条极细的科技蓝底边线，产生边界感 */
-    border-bottom: 1px solid rgba(10, 37, 64, 0.08); 
-    /* 加一个极淡的投影，产生立体悬浮感 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    gap: 25px; /* 间距稍微拉开一点点 */
+    padding: 18px 0; /* 稍微加宽垂直边距，显得更大气 */
 }
-
 nav a {
 text-decoration: none;
 color: var(--main-navy);
