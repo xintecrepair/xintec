@@ -57,39 +57,47 @@ nav {
 
 /* 2. 标题打字机效果修复 - 基础设置 */
 /* 1. 基础居中设置 */
+/* 1. 修复背景图全覆盖问题：限制 header 高度 */
+.hero {
+    min-height: 450px; /* 不要用 100vh，否则会全屏覆盖 */
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* 避开导航栏 */
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('你的背景图地址');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 2. 强制标题换行并水平居中 */
 .hero h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    margin: 0 auto !important;
-    text-align: center !important;
-    width: 100% !important;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
     display: block !important;
 }
 
-/* 2. 手机端专项调优：增加顶部间距，彻底解决视觉偏移 */
+/* 关键：让打字机生成的文字识别 \n 换行符，并保持居中 */
+#typed {
+    white-space: pre-wrap !important; /* 核心：识别 JS 里的换行符 */
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* 3. 手机端微调 */
 @media (max-width: 600px) {
-    /* 增加 header 的顶部距离，躲开固定的导航栏 */
-    header {
-        padding-top: 120px !important; 
-        padding-bottom: 40px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
+    .hero {
+        height: 50vh; /* 手机端背景图矮一点 */
     }
-
     .hero h1 {
-        font-size: 1.8rem !important; /* 既然已经分行，字可以稍微大一点点回来 */
-        padding: 0 10px !important;
+        font-size: 1.6rem !important;
     }
-
-    /* 确保 h1 内部的两个 span 也是强制居中且占据全宽 */
-    .hero h1 span {
-        display: block !important;
-        width: 100% !important;
-        text-align: center !important;
-        margin: 5px 0 !important;
-    }
-
+}
     /* 修复导航栏手机端文字挤在一起的问题 */
     nav {
         gap: 12px !important;
@@ -290,11 +298,12 @@ footer { text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.8rem;
 <a href="#contact">联系我们</a>
 </nav>
 
-<header>
-<h1 style="display: block; width: 100%; text-align: center;">
-    <span style="display: block;">多伦多新特电子</span>
-    <span style="display: block; font-size: 0.8em; opacity: 0.9;">Xintec Repair</span>
-</h1>
+<header class="hero">
+    <h1>
+        <span id="typed"></span>
+    </h1>
+    <p>国内20年老店技术沉淀 · GTA地区上门服务</p>
+</header>
 
 <div class="container">
 <h2 id="computer" class="section-title">💻 电脑维修项目</h2>
