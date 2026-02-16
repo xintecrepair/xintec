@@ -151,12 +151,18 @@ white-space: nowrap;
 
 /* 优势板块 */
 .about-box {
-    background: linear-gradient(135deg, #0a2540 0%, #163a5f 100%) !important;
-    color: #ffffff !important; /* 白色文字 */
+    /* 极致淡雅的磨砂白 */
+    background: rgba(255, 255, 255, 0.4) !important; 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    /* 细微的边框勾勒边界 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 24px;
     padding: 30px;
-    box-shadow: 0 15px 35px rgba(10, 37, 64, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+    /* 深蓝灰文字，高级且清晰 */
+    color: #0a2540 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
 }
 .about-box p {
 margin: 15px 0;
@@ -223,11 +229,30 @@ footer { text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.8rem;
 </div>
 
 <div id="about" class="about-box">
-<p>✅ <strong>资深经验：</strong> 国内20年老店技术沉淀</p>
-<p>✅ <strong>方便快捷：</strong> 大多伦多(GTA)地区上门服务</p>
-<p>✅ <strong>诚信第一：</strong> 面对面维修，价格公开透明</p>
-</div>
+    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+        <div style="display: flex; flex-direction: column;">
+            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">资深经验</strong>
+            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">国内20年老店技术沉淀</span>
+        </div>
+    </div>
 
+    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
+        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+        <div style="display: flex; flex-direction: column;">
+            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">方便快捷</strong>
+            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">大多伦多(GTA)地区上门服务</span>
+        </div>
+    </div>
+
+    <div style="display: flex; align-items: flex-start;">
+        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+        <div style="display: flex; flex-direction: column;">
+            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">诚信第一</strong>
+            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">面对面维修，价格公开透明</span>
+        </div>
+    </div>
+</div>
 <div id="contact" class="contact-box">
 <div class="contact-item">💬 微信: Canadaxt</div>
 <img src="wechat-qr.png.JPG" alt="微信二维码" style="width: 180px; height: 180px; border: 5px solid white; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.2);">
