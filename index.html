@@ -42,25 +42,64 @@ body {
 }
 
 /* 导航栏毛玻璃效果 */
+/* 1. 导航栏突出效果 (约45行) */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    /* 核心修改：增加不透明度到 0.9，并利用 saturate 提亮透过的背景色 */
     background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    /* 增加一个非常淡的底边线，让它与下方内容有物理分割感 */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    /* 优化投影，让悬浮感更自然 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     z-index: 1000;
-    display: flex;
-    justify-content: center;
-    gap: 25px; /* 间距稍微拉开一点点 */
-    padding: 18px 0; /* 稍微加宽垂直边距，显得更大气 */
 }
-nav a {
+
+/* 2. 标题打字机效果修复 (解决手机版缺字) */
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    word-break: break-word; /* 允许在长单词处换行 */
+    overflow-wrap: break-word;
+    white-space: normal !important; /* 强制允许换行，覆盖打字机默认设置 */
+}
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    word-break: break-word; /* 允许换行 */
+    white-space: normal !important; /* 强制换行 */
+}
+
+/* 专门针对手机的缩放 */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8rem !important; /* 手机上变小一点 */
+    }
+}
+/* 3. 资深经验板块：淡雅磨砂风格 */
+.about-box {
+    background: rgba(255, 255, 255, 0.4) !important; 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 30px;
+    margin: 20px 0;
+    color: #0a2540 !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
+}
+
+/* 4. 专门针对手机屏的微调 */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 1.8rem !important; /* 手机端字号缩小，确保显示全 */
+        padding: 0 10px;
+    }
+    .hero p {
+        font-size: 0.95rem !important;
+    }
+}nav a {
 text-decoration: none;
 color: var(--main-navy);
 font-weight: 500;
@@ -164,12 +203,15 @@ white-space: nowrap;
     color: #0a2540 !important;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.02);
 }
-.about-box p {
-margin: 15px 0;
-font-size: 1.05rem;
-display: flex;
-align-items: center;
-gap: 10px;
+.about-box {
+    background: rgba(255, 255, 255, 0.4) !important; /* 调淡背景 */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 30px;
+    margin: 20px 0;
+    color: #0a2540 !important;
 }
 
 /* 联系方式区块 */
@@ -229,29 +271,28 @@ footer { text-align: center; padding: 60px 20px; color: #aaa; font-size: 0.8rem;
 </div>
 
 <div id="about" class="about-box">
-    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+    <div style="display: flex; align-items: flex-start; margin-bottom: 18px;">
+        <span style="margin-right: 12px; margin-top: 2px;">✅</span>
         <div style="display: flex; flex-direction: column;">
-            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">资深经验</strong>
-            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">国内20年老店技术沉淀</span>
+            <strong style="color: #003366;">资深经验</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">国内20年老店技术沉淀</span>
         </div>
     </div>
-
-    <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
-        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+    <div style="display: flex; align-items: flex-start; margin-bottom: 18px;">
+        <span style="margin-right: 12px; margin-top: 2px;">✅</span>
         <div style="display: flex; flex-direction: column;">
-            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">方便快捷</strong>
-            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">大多伦多(GTA)地区上门服务</span>
+            <strong style="color: #003366;">方便快捷</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">大多伦多(GTA)地区上门服务</span>
         </div>
     </div>
-
     <div style="display: flex; align-items: flex-start;">
-        <span style="font-size: 1.2rem; margin-right: 12px; margin-top: 2px;">✅</span>
+        <span style="margin-right: 12px; margin-top: 2px;">✅</span>
         <div style="display: flex; flex-direction: column;">
-            <strong style="font-size: 1rem; color: #003366; margin-bottom: 4px;">诚信第一</strong>
-            <span style="font-size: 0.9rem; line-height: 1.5; opacity: 0.85;">面对面维修，价格公开透明</span>
+            <strong style="color: #003366;">诚信第一</strong>
+            <span style="font-size: 0.9rem; opacity: 0.8;">面对面维修，价格公开透明</span>
         </div>
     </div>
+</div>
 </div>
 <div id="contact" class="contact-box">
 <div class="contact-item">💬 微信: Canadaxt</div>
