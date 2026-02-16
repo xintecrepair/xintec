@@ -55,27 +55,43 @@ nav {
     z-index: 1000;
 }
 
-/* 2. 标题打字机效果修复（解决截断+偏左问题） */
-/* 专门针对手机的缩放和间距调整 */
+/* 2. 标题打字机效果修复 - 基础设置 */
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    display: block !important;
+}
+
+/* 强制让打字机生成的 span 能够换行 */
+.hero h1 span {
+    white-space: normal !important;
+    display: inline !important;
+    word-break: break-word !important;
+}
+
+/* 手机端专用样式：必须放在普通样式下面，确保生效 */
 @media (max-width: 600px) {
     .hero h1 {
-        font-size: 1.6rem !important; /* 确保字号足够小 */
-        width: 100% !important;      /* 强制容器宽度等于屏幕宽度 */
-        max-width: 100vw !important; /* 防止超出视口 */
-        margin: 0 auto 15px auto !important; /* 强制上下左右居中 */
-        text-align: center !important;
-        padding: 0 10px !important;
-        box-sizing: border-box !important;
+        font-size: 1.5rem !important; /* 字号再小一点，给换行留空间 */
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 auto 15px auto !important;
+        padding: 0 15px !important;
+        display: block !important;
     }
-    
-    /* 顺便修复导航栏在手机上可能偏左的问题 */
+
+    .hero h1 span {
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+        white-space: normal !important; /* 手机端再次强制换行 */
+    }
+
     nav {
-        justify-content: space-around !important; /* 手机端导航平分空间 */
+        justify-content: space-around !important;
         padding: 10px 5px !important;
     }
-}
-}
-}
 }
 /* 3. 资深经验板块：淡雅磨砂风格 */
 .about-box {
