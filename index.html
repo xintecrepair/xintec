@@ -58,26 +58,39 @@ nav {
 /* 2. 标题打字机效果修复 - 基础设置 */
 /* 1. 基础居中设置 */
 /* 1. 修复背景图全覆盖问题：限制 header 高度 */
+/* 大约从第 59 行开始替换 */
 .hero {
-    min-height: 450px; /* 不要用 100vh，否则会全屏覆盖 */
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding-top: 80px; /* 避开导航栏 */
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('你的背景图地址');
-    background-size: cover;
-    background-position: center;
+    min-height: 400px !important; 
+    height: 50vh !important; /* 核心：不占全屏，只占一半 */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-top: 60px !important;
+    position: relative;
+    /* 补回背景图，确保不显灰色 */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://xintecrepair.github.io/background.jpg') no-repeat center center;
+    background-size: cover !important;
+    color: white;
 }
 
-/* 2. 强制标题换行并水平居中 */
 .hero h1 {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100% !important;
+    margin: 0 auto !important;
     display: block !important;
+    font-size: 2.5rem;
+}
+
+#typed {
+    white-space: pre-wrap !important; /* 让 JS 的 \n 起作用 */
+    display: inline-block !important;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 1.6rem !important; }
+    .hero { height: 45vh !important; } /* 手机端再矮一点，方便看下面的项目 */
 }
 
 /* 关键：让打字机生成的文字识别 \n 换行符，并保持居中 */
